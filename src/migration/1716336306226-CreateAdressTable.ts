@@ -17,11 +17,23 @@ export class CreateAdressTable1716336306226 implements MigrationInterface {
                     type: 'varchar',
                 },
                 {
+                    name: 'number',
+                    type: 'varchar',
+                },
+                {
+                    name: 'complement',
+                    type: 'varchar',
+                },
+                {
                     name: 'city',
                     type: 'varchar',
                 },
                 {
                     name: 'state',
+                    type: 'varchar',
+                },
+                {
+                    name: 'country',
                     type: 'varchar',
                 },
                 {
