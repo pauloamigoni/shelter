@@ -33,21 +33,6 @@ export class UserEntity {
     @Column()
     description: string;
 
-    // @Column()
-    // address: string;
-
-    // @Column()
-    // city: string;
-
-    // @Column()
-    // state: string;
-
-    // @Column()
-    // country: string;
-
-    // @Column()
-    // postalCode: string;
-
     @Column()
     birthplace: string;
 
@@ -87,9 +72,9 @@ export class UserEntity {
     @Column()
     updatedAt: string;
 
-    @OneToMany(() => AddressEntity, (address) => address.userId)
+    @OneToMany(() => AddressEntity, (address) => address.user)
     addresses: AddressEntity[];
 
-    @OneToMany(() => AddressEntity, (address) => address.user, { cascade: true })
-    createdAdresses: AddressEntity[];
+    @OneToMany(() => AddressEntity, (address) => address.createdBy)
+    createdAddresses: AddressEntity[];
 }

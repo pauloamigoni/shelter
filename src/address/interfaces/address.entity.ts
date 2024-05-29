@@ -25,7 +25,7 @@ export class AddressEntity {
     @JoinColumn({ name: 'userId' })
     user: UserEntity;
 
-    @ManyToOne(() => UserEntity, user => user.createdAdresses)
+    @ManyToOne(() => UserEntity, user => user.createdAddresses)
     createdBy: UserEntity;
 
     @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })

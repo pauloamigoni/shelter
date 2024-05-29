@@ -1,9 +1,10 @@
+// src/user/user.service.ts
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateUserDto } from './dto/createUser.dto';
 import { UserEntity } from './interfaces/user.entity';
-import { AddressService } from '../address/address.service'; // Importe o AddressService
+import { AddressService } from '../address/address.service';
 import { hash } from 'bcrypt';
 
 @Injectable()

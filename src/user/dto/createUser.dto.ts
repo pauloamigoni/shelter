@@ -2,6 +2,7 @@ export interface CreateAddressDto {
     street: string;
     city: string;
     state: string;
+    country: string;
     postalCode: string;
 }
 
@@ -16,11 +17,6 @@ export interface CreateUserDto{
     username?: string;
     avatar?: string;
     description?: string;
-    // address?: string;
-    // city?: string;
-    // state?: string;
-    // country?: string;
-    // postalCode?: string;
     birthplace?: string;
     gender?: string;
     language?: string;
