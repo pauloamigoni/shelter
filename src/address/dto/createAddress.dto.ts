@@ -1,7 +1,9 @@
-export interface CreateAddressDto {
+// src/address/dto/createAddress.dto.ts
+export class CreateAddressDto {
     street: string;
     city: string;
     state: string;
+    country: string;
     postalCode: string;
-    userId: number; // Adicione este campo
+    userId: number;
 }

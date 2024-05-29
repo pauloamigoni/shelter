@@ -16,15 +16,17 @@ export class AddressEntity {
     state: string;
 
     @Column()
+    country: string;
+
+    @Column()
     postalCode: string;
 
     @ManyToOne(() => UserEntity, user => user.addresses, { nullable: true })
     @JoinColumn({ name: 'userId' })
-    userId: UserEntity;
-
-
-    @ManyToOne(() => UserEntity, (user) => user.createdAdresses)
     user: UserEntity;
+
+    @ManyToOne(() => UserEntity, user => user.createdAdresses)
+    createdBy: UserEntity;
 
     @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
     createdAt: Date;
