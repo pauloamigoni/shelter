@@ -4,10 +4,8 @@ import { Repository } from 'typeorm';
 import { PetEntity } from './interfaces/pet.entity';
 import IPetRepository from './interfaces/petRepository.interface.';
 
-
 @Injectable()
 export class PetRepository implements IPetRepository {
-
     constructor(
         @InjectRepository(PetEntity)
         private readonly petRepository: Repository<PetEntity>

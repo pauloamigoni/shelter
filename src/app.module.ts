@@ -19,8 +19,8 @@ import { PetModule } from './pet/pet.module';
       password: process.env.DB_PASSWORD,
       port: Number(process.env.DB_PORT),
       username: process.env.DB_USERNAME,
-      entities: [`${__dirname}/**/*.entity.js`], // Ajuste para .js
-      migrations: [`${__dirname}/migration/**/*.js`], // Ajuste para .js
+      entities: [`${__dirname}/**/*.entity.js`],
+      migrations: [`${__dirname}/migration/**/*.js`],
       migrationsRun: true,
       synchronize: true,
     }),
