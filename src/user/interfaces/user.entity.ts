@@ -1,5 +1,6 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { AddressEntity } from '../../address/interfaces/address.entity';
+import { PetEntity } from 'src/pet/interfaces/pet.entity';
 
 @Entity({ name: 'user' })
 export class UserEntity {
@@ -77,4 +78,7 @@ export class UserEntity {
 
     @OneToMany(() => AddressEntity, (address) => address.createdBy)
     createdAddresses: AddressEntity[];
+
+    @OneToMany(() => PetEntity, pet => pet.user)
+    pets: PetEntity[];
 }
