@@ -9,11 +9,11 @@ import { PetEntity } from './interfaces/pet.entity';
 
 @Controller('pet')
 export class PetController {
-
-    @Inject(PetTokens.getPetByIdUseCase)
-    private readonly getPetByIdUseCase: IPetCase<GetPetByIdUseCaseInput, GetPetByIdUseCaseOutput>;
     constructor(
-        private readonly petService: PetService) { }
+        @Inject(PetTokens.getPetByIdUseCase)
+        private readonly getPetByIdUseCase: IPetCase<GetPetByIdUseCaseInput, GetPetByIdUseCaseOutput>,
+        private readonly petService: PetService
+    ) { }
 
     @Post()
     async createPet(@Body() createPetDto: CreatePetDto): Promise<PetEntity> {

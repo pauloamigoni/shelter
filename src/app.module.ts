@@ -3,8 +3,6 @@ import { UserModule } from './user/user.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AddressModule } from './address/address.module';
-import { PetService } from './pet/pet.service';
-import { PetController } from './pet/pet.controller';
 import { PetModule } from './pet/pet.module';
 
 @Module({
@@ -28,7 +26,5 @@ import { PetModule } from './pet/pet.module';
     AddressModule,
     PetModule
   ],
-  controllers: [PetController],
-  providers: [PetService],
 })
 export class AppModule { }

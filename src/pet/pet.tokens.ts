@@ -1,4 +1,4 @@
 export default class PetTokens {
-    static petRepository = 'IPetRepository';
-    static getPetByIdUseCase = 'GetPetByIdUseCase';
+    static readonly petRepository = 'IPetRepository';
+    static readonly getPetByIdUseCase = 'GetPetByIdUseCase';
 }
