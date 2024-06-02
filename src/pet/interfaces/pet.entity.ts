@@ -48,6 +48,9 @@ export class PetEntity {
     @ManyToOne(() => UserEntity, user => user.pets, { nullable: false })
     user: UserEntity;
 
+    @ManyToOne(() => PetEntity, photo => photo.photos, { nullable: false })
+    photos: PetEntity;
+
     @CreateDateColumn()
     created_at: Date;
 
