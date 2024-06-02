@@ -1,3 +1,8 @@
+export interface CreatePhotosPetDto {
+    url: string;
+}
+
+
 export interface CreatePetDto {
     name: string;
     age?: number;
@@ -12,4 +17,5 @@ export interface CreatePetDto {
     neutered?: boolean;
     entry_date?: Date;
     status?: string;
+    photos: CreatePhotosPetDto[];
 }

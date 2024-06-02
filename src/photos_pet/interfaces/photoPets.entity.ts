@@ -10,6 +10,9 @@ export class PhotosEntity {
     @Column()
     url: string;
 
+    @Column()
+    petId: number;
+
     @ManyToOne(() => PetEntity, pet => pet.photos, { nullable: true })
     @JoinColumn({ name: 'petId' })
     photoPets: PetEntity;

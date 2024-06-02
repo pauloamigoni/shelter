@@ -9,6 +9,7 @@ import IPhotosPetRepository from './interfaces/photoPetsRepository.interface';
 
 @Injectable()
 export class PhotosPetService {
+    [x: string]: any;
     constructor(
         @Inject(PhotosPetTokens.photoPetRepository)
         private readonly photosPetRepository : IPhotosPetRepository,
@@ -29,4 +30,8 @@ export class PhotosPetService {
         };
         return this.photosPetRepository.createPhotoPets(photos);
     }
+
+    async getAllPhotoPets(): Promise<PhotosEntity[]> {
+        return this.photosPetRepository.getAllPhotoPets();
+     }
 }

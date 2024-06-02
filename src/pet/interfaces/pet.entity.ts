@@ -48,7 +48,7 @@ export class PetEntity {
     @ManyToOne(() => UserEntity, user => user.pets, { nullable: false })
     user: UserEntity;
 
-    @ManyToOne(() => PetEntity, photo => photo.photos, { nullable: false })
+    @ManyToOne(() => PetEntity, photo => photo.photos, { nullable: true })
     photos: PetEntity;
 
     @CreateDateColumn()

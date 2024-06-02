@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { PhotosEntity } from './interfaces/photoPets.entity';
 import { CreatePhotoPetsDto } from './dto/createPhotoPets.dto';
 import { PhotosPetService } from './photos_pet.service';
@@ -8,9 +8,14 @@ export class PhotosPetController {
 
     constructor(private readonly photoPetsService: PhotosPetService) { }
    
-        @Post()
+    @Post()
     async CreatePhotoPetsDto(@Body() CreatePhotoPetsDto: CreatePhotoPetsDto): Promise<PhotosEntity> {
         return this.photoPetsService.createPhotoPets(CreatePhotoPetsDto);
+    }
+
+    @Get()
+    async getAllPhotoPets(): Promise<PhotosEntity[]> {
+        return this.photoPetsService.getAllPhotoPets();
     }
 
 }
