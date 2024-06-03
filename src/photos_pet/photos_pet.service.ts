@@ -9,29 +9,28 @@ import IPhotosPetRepository from './interfaces/photoPetsRepository.interface';
 
 @Injectable()
 export class PhotosPetService {
-    [x: string]: any;
     constructor(
         @Inject(PhotosPetTokens.photoPetRepository)
-        private readonly photosPetRepository : IPhotosPetRepository,
+        private readonly photosPetRepository: IPhotosPetRepository,
         @InjectRepository(PetEntity)
         private readonly petRepository: Repository<PetEntity>,
     ) { }
 
     async createPhotoPets(photoPetsDto: CreatePhotoPetsDto): Promise<PhotosEntity> {
-        const photo = await this.petRepository.findOne({ where: { id: photoPetsDto.petId } });
-        if (!photo) {
-            throw new Error('Photos not found');
+        const pet = await this.petRepository.findOne({ where: { id: photoPetsDto.petId } });
+        if (!pet) {
+            throw new Error('Pet not found');
         }
 
-        const photos: Partial<PhotosEntity> = {
+        const photo: Partial<PhotosEntity> = {
             url: photoPetsDto.url,
-            photoPets: photo,
-   
+            pet: pet,
         };
-        return this.photosPetRepository.createPhotoPets(photos);
+
+        return this.photosPetRepository.createPhotoPets(photo);
     }
 
     async getAllPhotoPets(): Promise<PhotosEntity[]> {
         return this.photosPetRepository.getAllPhotoPets();
-     }
+    }
 }

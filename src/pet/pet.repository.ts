@@ -12,7 +12,10 @@ export class PetRepository implements IPetRepository {
     ) { }
 
     async getPetById(id: number): Promise<PetEntity | null> {
-        return this.petRepository.findOne({ where: { id } });
+        return this.petRepository.findOne({
+            where: { id },
+            relations: ['photos'],
+});
     }
 
     async createPet(pet: Partial<PetEntity>): Promise<PetEntity> {
@@ -21,6 +24,6 @@ export class PetRepository implements IPetRepository {
     }
 
     async getAllPets(): Promise<PetEntity[]> {
-        return this.petRepository.find();
+        return this.petRepository.find({relations: ['addresses']});
     }
 }

@@ -1,3 +1,8 @@
+class PhotosDto {
+    url: string;
+}  
+
+
 export default class GetPetByIdUseCaseOutput {
     id: number;
     name: string;
@@ -14,6 +19,7 @@ export default class GetPetByIdUseCaseOutput {
     entry_date: Date;
     status: string;
     user: number;
+    photos: PhotosDto[];
     created_at: Date;
     updated_at: Date;
 

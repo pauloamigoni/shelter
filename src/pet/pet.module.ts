@@ -6,10 +6,12 @@ import { PetService } from './pet.service';
 import PetTokens from './pet.tokens';
 import { PetRepository } from './pet.repository';
 import GetPetByIdUseCase from './usecases/getPetById.usecase';
+import { PhotosPetModule } from 'src/photos_pet/photos_pet.module';
 
 @Module({
     imports: [
         TypeOrmModule.forFeature([PetEntity]),
+        PhotosPetModule
     ],
     controllers: [PetController],
     providers: [

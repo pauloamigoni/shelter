@@ -1,5 +1,6 @@
 import { UserEntity } from 'src/user/interfaces/user.entity';
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
+import { PhotosEntity } from 'src/photos_pet/interfaces/photoPets.entity';
 
 @Entity({ name: 'pet' })
 export class PetEntity {
@@ -48,8 +49,8 @@ export class PetEntity {
     @ManyToOne(() => UserEntity, user => user.pets, { nullable: false })
     user: UserEntity;
 
-    @ManyToOne(() => PetEntity, photo => photo.photos, { nullable: true })
-    photos: PetEntity;
+    @OneToMany(() => PhotosEntity, (photo) => photo.pet)
+    photos: PhotosEntity[];
 
     @CreateDateColumn()
     created_at: Date;
