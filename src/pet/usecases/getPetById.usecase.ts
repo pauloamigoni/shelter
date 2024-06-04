@@ -33,6 +33,10 @@ export default class GetPetByIdUseCase implements IPetCase<GetPetByIdUseCaseInpu
             entry_date: pet.entry_date,
             status: pet.status,
             description: pet.description,
+            img: pet.img,
+            photos: (pet.photos || []).map(photo => ({
+                url: photo.url,
+            })),
         });
     }
 }

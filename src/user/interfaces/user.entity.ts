@@ -13,59 +13,62 @@ export class UserEntity {
     @Column({ nullable: false })
     email: string;
 
-    @Column()
+    @Column({ nullable: false })
     phone: string;
 
     @Column({ nullable: false })
     cpf: string;
 
-    @Column()
+    @Column({ nullable: true })
     password: string;
 
-    @Column()
+    @Column({ nullable: true })
     type: number;
 
-    @Column()
+    @Column({ nullable: true })
     username: string;
 
-    @Column()
+    @Column({ nullable: true })
     avatar: string;
 
-    @Column()
+    @Column({ nullable: true })
     description: string;
 
-    @Column()
+    @Column({ nullable: true })
     birthplace: string;
 
-    @Column()
+    @Column({ nullable: true })
     gender: string;
 
-    @Column()
+    @Column({ nullable: true })
     language: string;
 
-    @Column()
+    @Column({ nullable: true })
     profession: string;
 
-    @Column()
+    @Column({ nullable: true })
     company: string;
 
-    @Column()
+    @Column({ nullable: true })
     website: string;
 
-    @Column()
+    @Column({ nullable: true })
     relationship: string;
 
-    @Column()
+    @Column({ nullable: true })
     birthdate: string;
 
-    @Column()
+    @Column({ nullable: true })
     status: number;
 
-    @Column()
+    @Column({ nullable: true })
     active: boolean;
 
-    @Column()
+    @Column({ nullable: true })
     whatsApp: string;
+
+    @Column({ nullable: true })
+    img: string;
 
     @Column()
     createdAt: string;

@@ -18,6 +18,7 @@ export default class GetPetByIdUseCaseOutput {
     neutered: boolean;
     entry_date: Date;
     status: string;
+    img: string;
     user: number;
     photos: PhotosDto[];
     created_at: Date;

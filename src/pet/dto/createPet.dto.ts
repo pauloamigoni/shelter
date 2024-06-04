@@ -1,9 +1,15 @@
-export interface CreatePhotosPetDto {
+import { IsString, IsNotEmpty, MaxLength } from "class-validator";
+import { ApiProperty } from "@nestjs/swagger";
+
+export class CreatePhotosPetDto {
+    @IsString()
     url: string;
 }
 
-
-export interface CreatePetDto {
+export class CreatePetDto {
+    @IsString({ message: 'Nome deve ser uma string' })
+    @IsNotEmpty({ message: 'Nome deve ser informado' })
+    @ApiProperty({ description: 'Nome do Pet' })
     name: string;
     age?: number;
     type?: string;
@@ -17,5 +23,6 @@ export interface CreatePetDto {
     neutered?: boolean;
     entry_date?: Date;
     status?: string;
+    img?: string;
     photos: CreatePhotosPetDto[];
 }

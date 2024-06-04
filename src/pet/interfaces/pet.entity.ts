@@ -46,6 +46,9 @@ export class PetEntity {
     @Column({ nullable: false })
     status: string;
 
+    @Column({ nullable: true })
+    img: string;
+
     @ManyToOne(() => UserEntity, user => user.pets, { nullable: false })
     user: UserEntity;
 
@@ -57,4 +60,6 @@ export class PetEntity {
 
     @UpdateDateColumn()
     updated_at: Date;
+
+
 }
